@@ -22,6 +22,5 @@ func AutoMigrate() {
 
 	if err != nil {
 		panic("Could not auto migrate models with the database!")
-
 	}
 }

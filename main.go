@@ -10,6 +10,7 @@ import (
 func main() {
 	database.Connect()
 	database.AutoMigrate()
+	database.SetupRedis()
 
 	app := fiber.New()
 
@@ -18,7 +19,7 @@ func main() {
 	}))
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("He   fsvvdfas df  klo, World!adf")
+		return c.SendString("Hello World!")
 	})
 
 	routes.Setup(app)
